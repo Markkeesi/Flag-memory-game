@@ -114,6 +114,8 @@ body {
 .card .view {
     transition: transform 0.25s linear;
     backface-visibility: hidden;
+    user-select: none;
+    pointer-events: none;
 }
 
 img {
