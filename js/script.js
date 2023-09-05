@@ -12,10 +12,20 @@ function flipCard(e) {
             return cardOne = clickedCard;
         }
         cardTwo = clickedCard;
-        console.log(cardOne, cardTwo);
+        
+        let cardOneImg = cardOne.querySelector("img.imgBack").src,
+        cardTwoImg = cardTwo.querySelector("img.imgBack").src;
+        pair(cardOneImg, cardTwoImg);
     }
 }
 
+function pair(img1, img2) {
+    if(img1 === img2) {
+        return console.log("Parilöyty");
+    }
+    return console.log("ei Parilöyty");
+}
+
 cards.forEach(card => {
-    card.addEventListener("click", flipCard)    
+    card.addEventListener("click", flipCard);    
 });
