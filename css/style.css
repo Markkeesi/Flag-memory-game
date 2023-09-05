@@ -111,6 +111,9 @@ body {
     transform-style: preserve-3d;
 }
 
+.card .view {
+    transition: transform 0.25s linear;
+}
 
 img {
     border-radius: 5px;
