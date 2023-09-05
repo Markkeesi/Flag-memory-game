@@ -23,7 +23,11 @@ function pair(img1, img2) {
     if(img1 === img2) {
         return console.log("Parilöyty");
     }
-    return console.log("ei Parilöyty");
+    
+    setTimeout(() => {
+        cardOne.classList.remove("flip");
+        cardTwo.classList.remove("flip");
+    }, 1000);
 }
 
 cards.forEach(card => {
