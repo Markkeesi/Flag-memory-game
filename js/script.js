@@ -4,6 +4,8 @@ let pairs = 0;
 let cardOne, cardTwo;
 let disable = false;
 
+shuffleStart();
+
 function flipCard(e) {
     let clickedCard = e.target;
     if(clickedCard !== cardOne && !disable) {
@@ -61,6 +63,20 @@ function shuffleCard() {
             imgTag2.src = `img/maaLippu.jpg`;
             card.addEventListener("click", flipCard);
         }, 300);
+    });
+}
+
+function shuffleStart() {
+    let array = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
+    array.sort(() => Math.random() > 0.5 ? 1 : -1);
+
+    cards.forEach((card, index) => {
+
+        let imgTag = card.querySelector("img.imgBack");
+        imgTag.src = `img/img-${array[index]}.jpg`;
+        let imgTag2 = card.querySelector("img.img");
+        imgTag2.src = `img/maaLippu.jpg`;
+        card.addEventListener("click", flipCard);
     });
 }
 
