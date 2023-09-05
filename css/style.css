@@ -1,8 +1,8 @@
 *{
     box-sizing: border-box;
-    color: rgb(255, 255, 255);
     margin: 0;
     padding: 0;
+    font-family: Tahoma, sans-serif;
 }
 
 html {
@@ -30,58 +30,8 @@ body {
     display: inline-block;
 }
 
-.col-05 {width: 4.5%;}
-.col-1 {width: 8.33%;}
-.col-2 {width: 16.66%;}
-.col-25 {width: 20%;}
-.col-3 {width: 25%;}
-.col-4 {width: 33.33%;}
-.col-5 {width: 41.66%;}
-.col-6 {width: 50%;}
-.col-7 {width: 58.33%;}
-.col-8 {width: 66.66%;}
-.col-9 {width: 75%;}
-.col-10 {width: 83.33%;}
-.col-11 {width: 91.66%;}
-.col-12 {width: 100%;}
-
-@media only screen and (max-width: 768px) {
-    [class*="col-"] {
-        width: 100%;
-    }
-}
-
-@media only screen and (min-width: 769px) and (max-width: 1099.99px) {
-    .col-m-05 {width: 4.5%;}
-    .col-m-1 {width: 8.33%;}
-    .col-m-2 {width: 16.66%;}
-    .col-m-3 {width: 25%;}
-    .col-m-4 {width: 33.33%;}
-    .col-m-5 {width: 41.66%;}
-    .col-m-6 {width: 50%;}
-    .col-m-7 {width: 58.33%;}
-    .col-m-8 {width: 66.66%;}
-    .col-m-9 {width: 75%;}
-    .col-m-10 {width: 83.33%;}
-    .col-m-11 {width: 91.66%;}
-    .col-m-12 {width: 100%;}
-}
-
-@media only screen and (max-width: 768px) {
-    .col-s-05 {width: 4.5%;}
-    .col-s-1 {width: 8.33%;}
-    .col-s-2 {width: 16.66%;}
-    .col-s-3 {width: 25%;}
-    .col-s-4 {width: 33.33%;}
-    .col-s-5 {width: 41.66%;}
-    .col-s-6 {width: 50%;}
-    .col-s-7 {width: 58.33%;}
-    .col-s-8 {width: 66.66%;}
-    .col-s-9 {width: 75%;}
-    .col-s-10 {width: 83.33%;}
-    .col-s-11 {width: 91.66%;}
-    .col-s-12 {width: 100%;}
-}
+.col-card {width: 20%;}
+.col-row {width: 100%;}
 
 .cardContainer {
     text-align: center;
@@ -89,17 +39,53 @@ body {
 
 .header {
     padding: 15px;
+    text-align: center;
 }
 
 .title {
-    display: inline-block;
+    font-size: 1.5em;
+    color: rgb(32, 139, 0);
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .moves {
     display: inline-block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-right: 150px;
+    font-size: 1.2em;
+    color: rgb(0, 142, 95);
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 
 .btnNewGame {
+    display: none;
+    background-color: black;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 1.2em;
+    color: rgb(255, 255, 255);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    cursor: pointer;
+    border-radius: 5px;
+    border-color: rgb(255, 255, 255);
+    border-width: 1px;
+    border-style: solid;
+    
+}
+
+.btnNewGame:hover {
+    background-color: rgb(110, 110, 110);
+}
+
+.btnNewGame:active {
+    background-color: rgb(110, 110, 110);
+    transform: translateY(4px);
+}
+
+.visible {
     display: inline-block;
 }
 
