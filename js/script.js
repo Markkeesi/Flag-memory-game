@@ -4,13 +4,16 @@ let cardOne, cardTwo;
 
 function flipCard(e) {
     let clickedCard = e.target;
-    clickedCard.classList.add("flip");
+    if(clickedCard !== cardOne) {
+
+        clickedCard.classList.add("flip");
     
-    if(!cardOne) {
-        return cardOne = clickedCard;
+        if(!cardOne) {
+            return cardOne = clickedCard;
+        }
+        cardTwo = clickedCard;
+        console.log(cardOne, cardTwo);
     }
-    cardTwo = clickedCard;
-    console.log(cardOne, cardTwo);
 }
 
 cards.forEach(card => {
