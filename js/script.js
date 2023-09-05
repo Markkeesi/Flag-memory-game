@@ -1,10 +1,11 @@
 const cards = document.querySelectorAll(".card");
 
 let cardOne, cardTwo;
+let disable = false;
 
 function flipCard(e) {
     let clickedCard = e.target;
-    if(clickedCard !== cardOne) {
+    if(clickedCard !== cardOne && !disable) {
 
         clickedCard.classList.add("flip");
     
@@ -12,7 +13,7 @@ function flipCard(e) {
             return cardOne = clickedCard;
         }
         cardTwo = clickedCard;
-        
+        disable = true;
         let cardOneImg = cardOne.querySelector("img.imgBack").src,
         cardTwoImg = cardTwo.querySelector("img.imgBack").src;
         pair(cardOneImg, cardTwoImg);
@@ -21,12 +22,17 @@ function flipCard(e) {
 
 function pair(img1, img2) {
     if(img1 === img2) {
-        return console.log("Parilöyty");
+        cardOne.removeEventListener("click" ,flipCard);
+        cardTwo.removeEventListener("click" ,flipCard);
+        cardOne = cardTwo = "";
+        return disable = false;
     }
     
     setTimeout(() => {
         cardOne.classList.remove("flip");
         cardTwo.classList.remove("flip");
+        cardOne = cardTwo = "";
+        disable = false;
     }, 1000);
 }
 
