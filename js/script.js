@@ -26,7 +26,7 @@ function pair(img1, img2) {
         pairs++;
         if(pairs == 6) {
             setTimeout(() => {
-                return shuffleCard();
+                shuffleCard();
             }, 1000);
         }
         cardOne.removeEventListener("click" ,flipCard);
@@ -40,15 +40,27 @@ function pair(img1, img2) {
         cardTwo.classList.remove("flip");
         cardOne = cardTwo = "";
         disable = false;
-    }, 1000);
+    }, 700);
 }
 
 function shuffleCard() {
+
     pairs = 0;
     cardOne = cardTwo = "";
-    cards.forEach(card => {
+    disable = false;
+    let array = [1, 2, 3, 4, 5, 6, 1, 2, 3, 4, 5, 6];
+    array.sort(() => Math.random() > 0.5 ? 1 : -1);
+
+    cards.forEach((card, index) => {
         card.classList.remove("flip");
-        card.addEventListener("click", flipCard);
+
+        setTimeout(() => {
+            let imgTag = card.querySelector("img.imgBack");
+            imgTag.src = `img/img-${array[index]}.jpg`;
+            let imgTag2 = card.querySelector("img.img");
+            imgTag2.src = `img/maaLippu.jpg`;
+            card.addEventListener("click", flipCard);
+        }, 300);
     });
 }
 
