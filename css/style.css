@@ -139,10 +139,10 @@ img {
     left: 0;
 }
 
-.card:hover .front {
+.card.flip .front {
     transform: rotateY(180deg);
 }
 
-.card:hover .back {
+.card.flip .back {
     transform: rotateY(0deg);
 }
